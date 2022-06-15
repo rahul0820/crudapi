@@ -16,6 +16,7 @@ class Movie(db.Model):
     def json(self):
         return {'id': self.id, 'title': self.title, 'year': self.year, 'genre': self.genre}
 
+
 def add_movie(_title, _year, _genre):
     new_movie = Movie(title = _title, year = _year, genre = _genre)
     db.session.add(new_movie)
