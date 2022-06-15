@@ -17,6 +17,7 @@ class Movie(db.Model):
 
 
 def add_movie(_title, _year, _genre):
+    """Add movie"""
     new_movie = Movie(title=_title, year=_year, genre=_genre)
     db.session.add(new_movie)
     db.session.commit()
