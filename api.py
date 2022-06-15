@@ -29,8 +29,7 @@ def add_movies():
 def update_movies():
     request_data = request.get_json()
     update_movie(request_data['id'], request_data['title'], request_data['year'], request_data['genre'])
-    response = Response("movie Updated", status=200, mimetype='application/json')
-    return response
+    return Response("movie Updated", status=200, mimetype='application/json')
 
 
 @app.route('/movies/<int:id>', methods=['DELETE'])
@@ -38,8 +37,6 @@ def remove_movies(id):
     delete_movie(id)
     response = Response("Movie Deleted", status=200, mimetype='application/json')
     return response
-
-
 
 
 if __name__ == "__main__":
